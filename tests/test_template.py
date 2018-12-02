@@ -1,5 +1,4 @@
 import falcon
-from bs4 import BeautifulSoup
 
 
 def test_headers(client):
@@ -9,14 +8,14 @@ def test_headers(client):
     assert resp.status_code == 200
 
 
-def test_html_p_tag(client, jinja_context):
+def test_html_p_tag(client, soup, jinja_context):
     resp = client.simulate_get('/first')
-    soup = BeautifulSoup(resp.text, 'html.parser')
+    soup = soup(resp.text)
     assert soup.find('p').text == jinja_context['quote']
 
 
-def test_html_li_tags(client, jinja_array_context):
+def test_html_li_tags(client, soup, jinja_array_context):
     resp = client.simulate_get('/second')
-    soup = BeautifulSoup(resp.text, 'html.parser')
-    result = [li.text for li in soup.find_all('li')]
+    html = soup(resp.text)
+    result = [li.text for li in html.find_all('li')]
     assert result == jinja_array_context['frameworks']
