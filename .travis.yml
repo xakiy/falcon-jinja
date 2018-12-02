@@ -5,6 +5,6 @@ python:
   - 3.6
 install:
   - pip install -U setuptools
-  - pip install tox
+  - pip install tox-travis
 script:
   tox
