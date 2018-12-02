@@ -20,7 +20,7 @@ setup(
     platforms='any',
     install_requires=[
         'jinja2',
-        'falcon2'
+        'falcon'
     ],
     classifiers=[
         'Environment :: Web Environment',
