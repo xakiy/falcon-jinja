@@ -1,0 +1,8 @@
+jinja2
+falcon
+flake8
+isort
+gunicorn
+pytest
+beautifulsoup4
+tox
