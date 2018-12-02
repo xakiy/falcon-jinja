@@ -1,8 +1,8 @@
-jinja2
-falcon
-flake8
-isort
-gunicorn
-pytest
-beautifulsoup4
-tox
+jinja2==2.10
+falcon==1.4.1
+flake8==3.6.0
+isort==4.3.4
+gunicorn==19.9.0
+pytest==4.0.1
+beautifulsoup4==4.6.3
+tox==3.5.3
