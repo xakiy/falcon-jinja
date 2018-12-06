@@ -2,7 +2,7 @@ import os
 
 import falcon
 
-from falcon_jinja import FalconTemplate
+from falcon_jinja2 import FalconTemplate
 
 path = os.path.join(os.path.dirname(__file__), 'test_templates')
 falcon_template = FalconTemplate(path=path)
