@@ -4,8 +4,9 @@ falcon-jinja
 Jinja2 support for Falcon web framework
 """
 
-import falcon_jinja2
 from setuptools import setup
+
+import falcon_jinja2
 
 setup(
     name='falcon_jinja2',
