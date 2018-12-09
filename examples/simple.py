@@ -10,5 +10,6 @@ class FirstResource:
     def on_get(self, req, resp):
         resp.context = {'framework': 'Falcon'}
 
+
 app = falcon.API()
 app.add_route('/first', FirstResource())
