@@ -8,7 +8,9 @@ Simple jinja2 support for Falcon framework.
 
 Installation
 ============
-```pip install falcon-jinja2```
+```
+pip install falcon-jinja2
+```
 
 
 Examples
