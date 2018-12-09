@@ -13,7 +13,7 @@ class FalconTemplateNotFound(Exception):
 class FalconTemplate:
     """
         Args:
-            path (str): Name of an directory where HTML files defined
+            path (str): Name of an directory where HTML files defined.
 
         Attributes:
             _env (jinja2.Environment): Jinja component which shared
@@ -22,7 +22,8 @@ class FalconTemplate:
             template_path (str): Name of folder where all
             HTML files are defined.
 
-            loader (jinja2.FileSystemLoader):
+            loader (jinja2.FileSystemLoader): Jinja2 class which loaded
+            HTML template from filesystem.
     """
 
     BASE_FOLDER = 'templates'
@@ -36,12 +37,12 @@ class FalconTemplate:
     def __get_response(objects: tuple):
         """Retrieve falcon's Response object
             Args:
-                objects (tuple): An list with
-                falcon.Request, falcon.Response, and other arguments
+                objects (tuple): An list with falcon.Request,
+                falcon.Response, and other arguments.
 
             Returns:
                 An falcon.Response object if it there
-                otherwise False
+                otherwise False.
         """
         for response in objects:
             if isinstance(response, Response):
@@ -52,12 +53,13 @@ class FalconTemplate:
         """Makes a jinja template, and rendered passed context
 
             Args:
-                template (str): Name of HTML file
-                which will be rendered
-                ctx (dict): An dictionary with context
+                template (str): Name of HTML file which will be rendered.
+
+                context (dict): An dictionary with
+                a response context.
 
             Returns:
-                String representation of HTML content
+                A string representation of HTML content
         """
         try:
             template = self._env.get_template(template)
@@ -69,7 +71,13 @@ class FalconTemplate:
         return template.render(**context)
 
     def render(self, template: str):
-        def render(func):
+        """Decorator which renders HTML content
+
+            Args:
+                template (str): HTML file for which will
+                be rendered HTML content
+        """
+        def render_template(func):
             def wrapper(*args, **kwargs):
 
                 response = self.__get_response(args)
@@ -81,4 +89,4 @@ class FalconTemplate:
                     template, response.context
                 )
             return wrapper
-        return render
+        return render_template

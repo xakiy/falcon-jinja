@@ -12,14 +12,12 @@ class FirstResource:
     @falcon_template.render('index.html')
     def on_get(self, req, resp):
         resp.context = {'quote': 'Hello from Falcon!'}
-        resp.status_code = 200
 
 
 class SecondResource:
     @falcon_template.render('second.html')
     def on_get(self, req, resp):
         resp.context = {'frameworks': ['Falcon', 'Flask', 'Django']}
-        resp.jinja_ctx = {'frameworks': ['Falcon', 'Flask', 'Django']}
 
 
 app = falcon.API()
