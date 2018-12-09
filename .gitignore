@@ -19,3 +19,4 @@ sdist/
 
 .pytest_cache
 .tox
+build/
