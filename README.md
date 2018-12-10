@@ -20,12 +20,12 @@ import falcon
 
 from falcon_jinja2 import FalconTemplate
 
-# NOTE: if you want to change name of
-# folder where your HTML files are defined
+# NOTE: if you want to change name of folder where your HTML files are defined
 # Add `path` argument to the FalconTemplate class
-# Example:
-#   falcon_template = FalconTemplate(path='path_to_your_folder')
+#    Example:
+#        falcon_template = FalconTemplate(path='path_to_your_folder')
 
+falcon_template = FalconTemplate()
 
 class FirstResource:
     @falcon_template.render('index.html')
