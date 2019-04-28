@@ -1,4 +1,4 @@
-jinja2==2.10
+jinja2>=2.10.1
 falcon==1.4.1
 flake8==3.6.0
 isort==4.3.4
