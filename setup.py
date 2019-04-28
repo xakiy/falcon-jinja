@@ -20,7 +20,7 @@ setup(
     packages=['falcon_jinja2'],
     platforms='any',
     install_requires=[
-        'jinja2',
+        'jinja2>=2.10.1',
         'falcon'
     ],
     classifiers=[
@@ -33,6 +33,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ]
 
 )
