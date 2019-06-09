@@ -1,6 +1,6 @@
 # falcon-jinja2
 
-[![Build Status](https://travis-ci.org/mikeylight/falcon-jinja.svg?branch=master)](https://travis-ci.org/mikeylight/falcon-jinja)
+[![Build Status](https://travis-ci.org/5onic/falcon-jinja.svg?branch=master)](https://travis-ci.org/5onic/falcon-jinja)
 
 
 Simple jinja2 support for Falcon framework.
